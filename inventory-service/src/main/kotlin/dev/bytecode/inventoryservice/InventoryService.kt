@@ -1,5 +1,6 @@
 package dev.bytecode.inventoryservice
 
+import dev.bytecode.inventoryservice.dto.InventoryResponse
 import dev.bytecode.inventoryservice.repository.InventoryRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -10,8 +11,9 @@ class InventoryService(
 ) {
 
     @Transactional(readOnly = true)
-    fun isInStock(skuCode: String): Boolean {
-        inventoryRepository.findSkuCode() ?: return false
-        return true
+    fun isInStock(skuCode: List<String>): List<InventoryResponse> {
+        return inventoryRepository.findBySkuCodeIn(skuCode).map {
+            InventoryResponse(it.skuCode, it.quantity > 0)
+        }
     }
 }

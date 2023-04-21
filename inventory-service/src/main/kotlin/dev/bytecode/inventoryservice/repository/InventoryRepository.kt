@@ -4,5 +4,5 @@ import dev.bytecode.inventoryservice.model.Inventory
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface InventoryRepository: JpaRepository<Inventory, Long> {
-    fun findSkuCode(): Inventory?
+    fun findBySkuCodeIn(skuCode: List<String>): List<Inventory>
 }
