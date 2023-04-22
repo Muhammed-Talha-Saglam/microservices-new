@@ -4,6 +4,7 @@ import dev.bytecode.orderservice.dto.InventoryResponse
 import dev.bytecode.orderservice.dto.OrderRequest
 import dev.bytecode.orderservice.model.Order
 import dev.bytecode.orderservice.repository.OrderRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.reactive.function.client.WebClient
@@ -13,9 +14,9 @@ import java.util.UUID
 
 @Service
 @Transactional
-class OrderService(
+class OrderService (
     private val orderRepository: OrderRepository,
-    private val webClient: WebClient
+    private val webClientBuilder: WebClient.Builder
 ) {
 
     fun placeOrder(orderRequest: OrderRequest) {
@@ -29,8 +30,8 @@ class OrderService(
 
         // Call Inventory service, and place product if product is in stock
         // This is a synchronous request
-        val inventoryResponse = webClient.get()
-            .uri("http://localhost:8082/api/inventory/") { uriBuilder ->
+        val inventoryResponse = webClientBuilder.build().get()
+            .uri("http://inventory-service/api/inventory/") { uriBuilder ->
                 uriBuilder.queryParam("skuCode", skuCodes).build()
             }
             .retrieve()

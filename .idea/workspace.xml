@@ -4,20 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50d061-bcc0-42a3-a7d2-eb98e360ed02" name="Changes" comment="Added all microservices under one parent project.">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/dto/InventoryResponse.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/config/WebClientConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/dto/InventoryResponse.kt" afterDir="false" />
+    <list default="true" id="4b50d061-bcc0-42a3-a7d2-eb98e360ed02" name="Changes" comment="Added WebConfig to OrderService for IPC btw OrderService and InventoryService.">
+      <change afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/kotlin/dev/bytecode/discoveryserver/DiscoveryServerApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/InventoryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/InventoryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/controller/InventoryController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/controller/InventoryController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/model/Inventory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/model/Inventory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/repository/InventoryRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/repository/InventoryRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/model/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/model/Order.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/model/OrderLineItems.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/model/OrderLineItems.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/config/WebClientConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/config/WebClientConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/service/OrderService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/service/OrderService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -54,7 +55,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/25200064/Documents/spring-boot-microservices/microservices-new/inventory-service&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/25200064/Documents/spring-boot-microservices/microservices-new/inventory-service&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -73,6 +77,45 @@
       <command value="mvn clean package -DskipTests" />
     </option>
   </component>
+  <component name="RunManager" selected="Kotlin.InventoryServiceApplicationKt">
+    <configuration name="DiscoveryServerApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.bytecode.discoveryserver.DiscoveryServerApplicationKt" />
+      <module name="discovery-server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryServiceApplicationKt" type="JetRunConfigurationType" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.bytecode.inventoryservice.InventoryServiceApplicationKt" />
+      <module name="inventory-service" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.bytecode.orderservice.OrderServiceApplicationKt" />
+      <module name="order-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.bytecode.productservice.ProductServiceApplicationKt" />
+      <module name="product-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.InventoryServiceApplicationKt" />
+        <item itemvalue="Kotlin.OrderServiceApplicationKt" />
+        <item itemvalue="Kotlin.DiscoveryServerApplicationKt" />
+        <item itemvalue="Kotlin.ProductServiceApplicationKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -89,11 +132,19 @@
       <option name="project" value="LOCAL" />
       <updated>1682006654865</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added WebConfig to OrderService for IPC btw OrderService and InventoryService.">
+      <created>1682102279038</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682102279038</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added all microservices under one parent project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all microservices under one parent project." />
+    <MESSAGE value="Added WebConfig to OrderService for IPC btw OrderService and InventoryService." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added WebConfig to OrderService for IPC btw OrderService and InventoryService." />
   </component>
 </project>
