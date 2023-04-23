@@ -4,13 +4,11 @@ import dev.bytecode.orderservice.dto.InventoryResponse
 import dev.bytecode.orderservice.dto.OrderRequest
 import dev.bytecode.orderservice.model.Order
 import dev.bytecode.orderservice.repository.OrderRepository
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.bodyToMono
-import java.lang.IllegalArgumentException
-import java.util.UUID
+import java.util.*
 
 @Service
 @Transactional

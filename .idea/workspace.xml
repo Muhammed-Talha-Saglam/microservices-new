@@ -4,20 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b50d061-bcc0-42a3-a7d2-eb98e360ed02" name="Changes" comment="Added WebConfig to OrderService for IPC btw OrderService and InventoryService.">
-      <change afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/kotlin/dev/bytecode/discoveryserver/DiscoveryServerApplication.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="4b50d061-bcc0-42a3-a7d2-eb98e360ed02" name="Changes" comment="Added DiscoveryServerApplication module and Eureka.">
+      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/dev/bytecode/apigateway/ApiGatewayApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/dev/bytecode/apigateway/config/SecurityConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/kotlin/dev/bytecode/discoveryserver/Config/SecurityConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/InventoryServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/kotlin/dev/bytecode/inventoryservice/InventoryServiceApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/config/WebClientConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/config/WebClientConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/service/OrderService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/dev/bytecode/orderservice/service/OrderService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +60,8 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/25200064/Documents/spring-boot-microservices/microservices-new/inventory-service&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -77,7 +80,14 @@
       <command value="mvn clean package -DskipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.InventoryServiceApplicationKt">
+  <component name="RunManager" selected="Kotlin.ApiGatewayApplicationKt">
+    <configuration name="ApiGatewayApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dev.bytecode.apigateway.ApiGatewayApplicationKt" />
+      <module name="api-gateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DiscoveryServerApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.bytecode.discoveryserver.DiscoveryServerApplicationKt" />
       <module name="discovery-server" />
@@ -111,8 +121,9 @@
       <list>
         <item itemvalue="Kotlin.InventoryServiceApplicationKt" />
         <item itemvalue="Kotlin.OrderServiceApplicationKt" />
-        <item itemvalue="Kotlin.DiscoveryServerApplicationKt" />
         <item itemvalue="Kotlin.ProductServiceApplicationKt" />
+        <item itemvalue="Kotlin.ApiGatewayApplicationKt" />
+        <item itemvalue="Kotlin.DiscoveryServerApplicationKt" />
       </list>
     </recent_temporary>
   </component>
@@ -139,12 +150,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682102279038</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added DiscoveryServerApplication module and Eureka.">
+      <created>1682163590120</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682163590120</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added all microservices under one parent project." />
     <MESSAGE value="Added WebConfig to OrderService for IPC btw OrderService and InventoryService." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added WebConfig to OrderService for IPC btw OrderService and InventoryService." />
+    <MESSAGE value="Added DiscoveryServerApplication and Eureka." />
+    <MESSAGE value="Added DiscoveryServerApplication module and Eureka." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DiscoveryServerApplication module and Eureka." />
   </component>
 </project>
